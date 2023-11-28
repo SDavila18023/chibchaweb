@@ -39,6 +39,7 @@ app.use("/api/domain",dominio)
 
 //Servidor
 const port = process.env.PORT || 5000;
-app.listen(port, () => {
-    console.log(`Servidor en https://localhost:${port}`);
-});
+app.listen(port, '0.0.0.0', () => {
+    const host = server.address().address;
+    console.log(`Servidor Node.js escuchando en http://${host}:${port}`);
+  });
