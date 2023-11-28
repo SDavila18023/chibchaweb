@@ -38,8 +38,9 @@ app.use("/api/ticket",ticket)
 app.use("/api/domain",dominio)
 
 //Servidor
-const port = process.env.PORT || 5000;
-app.listen(port, '0.0.0.0', () => {
+const puerto = process.env.PORT || 5000;
+const server = app.listen(puerto, '0.0.0.0', () => {
     const host = server.address().address;
+    const port = server.address().port;
     console.log(`Servidor Node.js escuchando en http://${host}:${port}`);
   });
