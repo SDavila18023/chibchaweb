@@ -151,7 +151,6 @@ dominio.post(
               return res.status(500).send("Lo sentimos, el dominio ya está en uso");
             }
           } catch (error) {
-            console.error("Error al consultar la API ninjas:", error.response?.data || error.message);
             return res.status(500).send("Error al verificar la disponibilidad del dominio");
           }
         });
